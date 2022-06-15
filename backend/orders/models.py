@@ -6,7 +6,7 @@ from django.db import models
 class Orders(models.Model):
     id = models.PositiveSmallIntegerField(verbose_name="№", primary_key=True)
     order = models.PositiveIntegerField (verbose_name="заказ №")
-    sum_dol = models.PositiveIntegerField(verbose_name="стоимость,$")
-    sum_rub = models.PositiveIntegerField(verbose_name="стоимость,руб.")
-    delivery_time = models.DateField(verbose_name="сроки поставки")
+    sum_dol = models.CharField(verbose_name="стоимость,$", max_length=10)
+    sum_rub = models.CharField(verbose_name="стоимость,руб.", max_length=10)
+    delivery_time = models.CharField(verbose_name="сроки поставки", max_length=10)
     
