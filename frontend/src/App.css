@@ -1,0 +1,17 @@
+.container{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th {
+  border: 1px solid grey;
+}
+
+td {
+  border: 1px solid grey;
+}
