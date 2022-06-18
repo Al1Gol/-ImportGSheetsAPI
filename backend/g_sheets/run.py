@@ -2,7 +2,6 @@ from distutils.command.build import build
 from pprint import pprint
 import os
 from urllib import response
-import http
 
 import httplib2
 import googleapiclient.discovery

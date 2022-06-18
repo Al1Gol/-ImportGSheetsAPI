@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +85,25 @@ REST_FRAMEWORK = {
 }
 
 WSGI_APPLICATION = 'backend.wsgi.application'
+ASGI_APPLICATION = 'backend.asgi.application'
 
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+'''
+Можно хранить слои в постгрес
+CHANNEL_LAYERS = { 
+  "default": { 
+    "BACKEND": "channels_redis.core.RedisChannelLayer", 
+    "CONFIG": { 
+      "hosts": [("127.0.0.1", 6379)], 
+    }, 
+  }, 
+}
+'''
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
