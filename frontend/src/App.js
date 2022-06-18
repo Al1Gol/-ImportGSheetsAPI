@@ -8,7 +8,7 @@ import OrdersList from './components/OrdersList.js'
 class App extends React.Component {
     constructor(props){
         super(props)
-        this.socket = new WebSocket('ws://localhost:8000')
+        this.socket = new WebSocket('ws://localhost:8000/ws/orders/')
         this.request_id = new Date().getTime()
         this.state = {
             'orders': [],
@@ -35,6 +35,13 @@ class App extends React.Component {
             this.setState({
                 'orders': orders
             })
+            
+            this.socket.send(
+                JSON.stringify({
+                    action: "list",
+                    request_id: this.request_id,
+                })
+            )
         }
 
         this.socket.onerror = function(error) {
