@@ -55,10 +55,33 @@
 
     Заполняем: 
     - "Service account name" ---> "account"
+    Нажимаем "Create and continue"
     ![Screenshot](./doc/img/CreateCredentials5.png)
 
-4. Выгрузить json аккаунта.
-4. Полученный файл поместить в папку ./backend/g_sheets/ и переименовать в creds.json
+    Выбираем:
+        Role: Project --> Editor
+    Нажимаем "Continue"
+    Нажимаем "Done"
+    ![Screenshot](./doc/img/CreateCredential6.png)
+
+
+4. Создать и выгрузить json-ключ аккаунта.
+
+    В навигационном меню выбираем "APIs & Services" -> "Credentials"
+    ![Screenshot](./doc/img/ImportKey.png)
+
+    В панели "Service Accounts" выбираем наш аккунт.
+    ![Screenshot](./doc/img/ImportKey2.png)
+
+    Во вкладке "Keys", выбираем "Add key" --> "Create new key"
+    ![Screenshot](./doc/img/ImportKey3.png)
+
+    В появившемся окне выбираем "Json" и нажимаем кнопку "Create"
+    ![Screenshot](./doc/img/ImportKey4.png)
+
+    Ключ сформируется,а так же произойдет скачивание файла с ключом на Ваш ПК.
+
+4. Полученный файл поместить в папку ./backend/g_sheets/ данного проекта и переименовать в creds.json
 5. Сгенерированный при создании учетной записи email добавить в пользователи отслеживаемой таблицы.
 
 -------------------------------------------------------------------------------------------------------------
