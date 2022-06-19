@@ -10,3 +10,5 @@ class Orders(models.Model):
     sum_rub = models.CharField(verbose_name="стоимость,руб.", max_length=10)
     delivery_time = models.CharField(verbose_name="сроки поставки", max_length=10)
     
+    class Meta:
+        ordering = ['id',]
