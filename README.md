@@ -4,6 +4,7 @@
 
 Для функционирования выгрузки из GoogleSheetsAPI необходимо:
 1. Создать личный проект на https://console.cloud.google.com/.
+![Screenshot](Screenshot.png)
 2. Подключить для него 2 API: Google Drive API и Google Sheets API
 3. Создать учетные данные для Google Drive API с ролью Проект-Редактор. 
 4. Выгрузить json аккаунта.

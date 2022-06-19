@@ -17,7 +17,7 @@ class App extends React.Component {
 
     componentDidMount() {
 
-
+        /*Open a connection and send the first request to the server*/
         this.socket.onopen = (event) => {
             this.socket.send(
                 JSON.stringify({
@@ -27,15 +27,13 @@ class App extends React.Component {
             )
         }
         
-        
-
+        /*When receiving a message from the server, immediately makes a new request*/
         this.socket.onmessage = (event) => {
             const orders = JSON.parse(event.data).data
-            console.log('Данные:', orders);
             this.setState({
                 'orders': orders
             })
-            
+
             this.socket.send(
                 JSON.stringify({
                     action: "list",
